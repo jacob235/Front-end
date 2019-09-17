@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content ="width = device-width", initial-scale = "1">
+<title>
+
+</title>
+</head>
+
+<body>
+
+<h2> file upload 1</h2>
+
+<!--파일 업로드는 항상 post 방식이다.-->
+<form action="./upload1.do" method="post" enctype="multipart/form-data">
+	<label>name : <input type="text" name="name"></label><br>
+	<label>첨부파일 : <input type="file" name="myfile" multiple="multiple"></label><br>
+	<br>
+	<input type="submit">
+	<input type="reset">
+</form>
+<hr>
+<h2> file upload 2</h2>
+
+<!--파일 업로드는 항상 post 방식이다.-->
+<form action="./upload2.do" method="post" enctype="multipart/form-data">
+	<label>name : <input type="text" name="name"></label><br>
+	<label>첨부파일 : <input type="file" name="myfile" multiple="multiple"></label><br>
+	<br>
+	<input type="submit">
+	<input type="reset">
+</form>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+</body>
+</html>

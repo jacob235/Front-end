@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>main</title>
+<style>
+  /* import로 적용*/
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Pacifico|Roboto+Slab');
+
+header {
+border: 1px solid black;
+background-color:orange;
+width: 100%;
+height:300px;
+position: relative;
+}
+hgroup {
+text-align: center;
+}
+
+#top_nav{
+background-color: black;
+border: 1px solid black;
+position : absolute;
+top:0px;
+right: 0px;
+}
+#top_nav ul{
+text-align: center;
+list-style: none;
+padding: 0px;
+margin-top: -0.5px;
+margin-bottom: -0.5px;
+}
+#top_nav ul li{
+text-align: center;
+display: inline-block;
+margin-left: 5px;
+margin-right: 5px;
+
+}
+#top_nav ul li a{
+text-align: center;
+margin: 0, auto;
+padding: 10px;
+color: yellow;
+text-decoration: none;
+}
+
+#main_nav{
+width:900px;
+height : 40px;
+position : absolute;
+top:80%;
+left:50%;
+transform : translatex(-50%);
+}
+
+#main_nav ul{
+margin-left:auto;
+margin-right:auto;
+text-align: center;
+list-style: none;
+padding-left: 0px;
+}
+#main_nav ul li {
+text-align: center;
+display: inline;
+background-color: black;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+padding : 20px;
+
+}
+
+#main_nav ul li a{
+text-align: center;
+color:yellow;
+text-decoration: none;
+padding: 10px;
+font-weight: bold;
+font-size: 1.2em;
+}
+
+#left_a{
+float:left;
+width:20%;
+background-color: gray;
+height: 500px;
+}
+
+#left_a ul{
+list-style: none;
+}
+#left_a ul li{
+width: 100px;
+height : 30px;
+margin: 10px;
+border : 1px solid white;
+text-align: center;
+background-color:orange;
+border-radius:5px;
+box-shadow : 5px 5px 5px black;
+line-height: 30px;
+}
+
+#left_a ul li a{
+width: 100px;
+height : 30px;
+margin: 10px;
+text-decoration: none;
+font-size: 1.2em;
+font-weight: bold;
+color : green;
+}
+
+#center_a{
+float: left;
+width: 60%;
+height: 500px;
+}
+
+#center_a h1{
+text-align: center;
+}
+#center_a .tablea{
+width:60%;
+height:100px;
+margin:auto;
+text-align: center;
+border: 2px solid black;
+border-collapse: collapse;
+}
+
+#center_a .tablea thead{
+border:0;
+}
+#center_a .tablea thead tr{
+background-color: gray;
+color:orange;
+}
+#center_a .tablea tbody tr:nth-child(2n){
+background-color: silver;
+}
+
+#right_a{
+float:left;
+width:20%;
+height:500px;
+background-color: gray;
+}
+
+#right_a img{
+display: block;
+text-align: center;
+margin:20px;
+margin-right: auto;
+margin-left: auto;
+}
+
+</style>
+</head>
+<body>
+<header>
+   <hgroup>
+       <h1>Html5 & CSS3.0</h1>
+       <h5>Javascript, jquery , Ajax</h5>
+   </hgroup>
+  
+   <nav id="top_nav">
+      <ul>  <!-- block -->
+         <li><a href=""> ABOUT US</a> </li>
+         <li><a href=""> REGISTER</a> </li>
+         <li><a href=""> LOGIN</a> </li>
+      </ul>
+   </nav>
+   <nav id="main_nav">
+      <ul>
+         <li><a href=""> HTML5</a> </li>
+         <li><a href=""> CSS</a> </li>
+         <li><a href=""> JavaScript</a> </li>
+         <li><a href=""> jQuery</a> </li>
+         <li><a href=""> Ajax</a> </li>
+      </ul>
+	</nav>
+  
+</header>
+
+<nav id="nav1"></nav>
+<section>
+   <aside id="left_a">
+      <ul>
+        <li><a href="" class="btn1">기능1</a> </li>
+        <li><a href="" class="btn1">기능2</a> </li>
+        <li><a href="" class="btn1">기능3</a> </li>
+      </ul>
+   
+   </aside>
+   <aside id="center_a">
+   <div id="main">
+   <h1>Table CSS</h1>      <!-- h1 ==> block -->
+
+<table class="tablea">  <!-- table => inline -->
+   <thead>
+      <tr><th>ID</th><th>PWD</th><th>NAME</th></tr>
+   </thead>
+   <tbody>
+      <tr><td>java01</td><td>1234</td><td>홍길동</td></tr>
+      <tr><td>java02</td><td>1234</td><td>고길동</td></tr>
+      <tr><td>java03</td><td>1234</td><td>박길동</td></tr>
+      <tr><td>java04</td><td>1234</td><td>김길동</td></tr>
+      <tr><td>java05</td><td>1234</td><td>최길동</td></tr>
+   </tbody>
+</table>
+   </div>
+   </aside>
+   <aside id="right_a">
+      <img alt="" src="http://placehold.it/130x40"><!-- 가상의 이미지 제공해주는 사이트  -->
+      <img alt="" src="http://placehold.it/130x40">
+      <img alt="" src="http://placehold.it/130x40">
+      <img alt="" src="http://placehold.it/130x40">
+   </aside>
+</section>
+
+<footer></footer>
+</body>
+</html>

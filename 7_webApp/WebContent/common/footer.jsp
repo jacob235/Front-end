@@ -1,0 +1,1 @@
+<footer id="last">	Footer content  </footer>
