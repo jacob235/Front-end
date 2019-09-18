@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jquery ajax load</title>
+
+<link rel="stylesheet" href="./css/table.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+
+<style type="text/css">
+#demo {
+  width: 700px;
+  height: 400px;
+  overflow: scroll;
+}
+</style>
+
+<script type="text/javascript">
+let xdata;
+$(function(){  
+	 $('#btn1').click( function(){ 
+		 //$.ajax({ ajax 통신을 위한 환경설정 코드 기술 });  
+		 $.ajax({ 
+			 url:'xml.jsp',
+			 dataType:'xml',
+			 success:function(data){
+				 //alert("success "+data);
+				 xdata = data;
+				 displayxml(data);
+			 },
+			 error:function(error){
+				 alert("error "+error.name);
+			 }
+		 });  
+		 
+		 
+	 });
+	 
+});   
+
+const log = console.log;
+
+function displayxml(data){
+	//console.log(typeof(data))
+	//$(data).each((i,item)=>{log(item);});
+	
+	 let tag = "<table class='tablea'>";
+	 tag += "<tr><th>id </th><th>이름</th> <th>이메일</th></tr> ";
+	 
+	 let users = $(data).find('user');
+	 $(users).each((i,item)=>{
+		 tag += "<tr><td>"
+	     tag += $(item).find('id').text()+"</td><td>"+$(item).find('name').text()
+	             +"</td><td>"+$(item).find('email').text()
+	     tag += "</tr></td>"
+	 });
+	 
+	 tag += "</table>";
+	 
+	 $('#demo').html(tag);
+}
+
+
+</script>
+
+</head>
+<body>
+
+<h3>jquery ajax getData(xml)</h3>
+<button id="btn1"> getData(xml) </button>
+<div id="demo"></div>
+
+
+client = > 서버로 요청
+.주소창을 통해 url창
+.link 
+.submit 
+.ajax => XMLHttpRequest 백그라운드에서 작업 
+
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jquery ajax load</title>
+
+<link rel="stylesheet" href="./css/table.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+
+<style type="text/css">
+#demo {
+  width: 700px;
+  height: 400px;
+  overflow: scroll;
+}
+</style>
+
+<script type="text/javascript">
+$(function(){  
+	 $('#btn1').click( function(){ 
+		 
+		 //$.ajax({ ajax 통신을 위한 환경설정 코드 기술 });  
+		 $.ajax({ 
+			 url:'json.jsp',
+			 dataType:'json',
+			 success:function(data){
+				 //alert("success "+data);
+				 display(data);
+			 },
+			 error:function(error){
+				 alert("error "+error.name);
+			 }
+		 });  
+		 
+		 
+	 });
+	 
+});   
+
+const log = console.log;
+
+function display(data){
+	//console.log(typeof(data))
+	//$(data).each((i,item)=>{log(item);});
+	
+	 let tag = "<table class='tablea'>";
+	 tag += "<tr><th>id </th><th>이름</th> <th>이메일</th></tr> ";
+	 
+	 $(data).each((i,item)=>{
+		 tag += "<tr><td>"
+	     tag += item.id+"</td><td>"+item.name+"</td><td>"+item.email
+	     tag += "</tr></td>"
+	 });
+	 
+	 tag += "</table>";
+	 
+	 $('#demo').html(tag);
+}
+
+
+</script>
+
+</head>
+<body>
+
+<h3>jquery ajax getData(json)</h3>
+<button id="btn1"> getData(json) </button>
+<div id="demo"></div>
+
+</body>
+</html>
